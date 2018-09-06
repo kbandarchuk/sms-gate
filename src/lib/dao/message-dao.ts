@@ -1,6 +1,6 @@
-var pg = require("pg");
-var Message = require("../domains/message").Message;
-var PropertiesReader = require('properties-reader');
+import pg from 'pg';
+import Message from '../domains/message';
+import PropertiesReader from 'properties-reader';
 
 const queryForFetchMessages = 'SELECT * FROM message';
 const queryForSaveMessage = 'INSERT INTO message(phone, text_message) VALUES($1, $2)';
@@ -43,7 +43,7 @@ const saveMessage = function (phone, textMessage) {
     })
 };
 
-module.exports = {
+export default {
     fetchAllMessages : fetchAllMessages,
     saveMessage : saveMessage
 };

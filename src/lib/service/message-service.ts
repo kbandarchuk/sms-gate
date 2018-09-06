@@ -1,4 +1,4 @@
-var messageDao = require("../dao/message-dao");
+import messageDao from '../dao/message-dao';
 
 const fetchAllMessages = function(callback){
     messageDao.fetchAllMessages(function(result){
@@ -10,7 +10,7 @@ const saveMessage = function (message) {
     messageDao.saveMessage(message.phone, message.textMessage);
 };
 
-module.exports = {
+export default {
     fetchAllMessages : fetchAllMessages,
     saveMessage : saveMessage
 };

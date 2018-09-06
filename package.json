@@ -2,7 +2,7 @@
   "name": "sms-gate",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "src/server.ts",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
@@ -11,8 +11,10 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "build": "tsc",
+    "dev": "nodemon -L",
+    "start": "node ./dist/server.js"
+},
   "author": "",
   "license": "ISC"
 }

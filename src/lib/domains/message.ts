@@ -1,4 +1,7 @@
-class Message {
+export default class Message {
+
+    private phone: string;
+    private textMessage: string;
 
     constructor(phone, textMessage){
         this.phone = phone;
@@ -28,7 +31,3 @@ class Message {
         return (typeof str === "undefined" || str === null || str.trim() ===  "");
     }
 }
-
-module.exports = {
-    Message : Message
-};

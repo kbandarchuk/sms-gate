@@ -1,7 +1,7 @@
-var express = require("express");
-var Message = require('../domains/message').Message;
-var messageService = require('../service/message-service');
-var bodyParser = require('body-parser');
+import express from 'express';
+import Message from '../domains/message';
+import messageService from '../service/message-service';
+import bodyParser from 'body-parser';
 
 const router = express.Router();
 const error_handler = function (err, req, res, next) {
@@ -17,9 +17,9 @@ router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended: true}));
 router.use(error_handler);
 
-
 router.get("/fetch", function (req,res) {
     messageService.fetchAllMessages(function(result) {
+        console.log("Main handler");
         res.send(result);
     })
 });
@@ -29,7 +29,6 @@ router.post("/save", function (req,res) {
     res.status(200).send("Successfully completed");
 });
 
-module.exports = {
+export default {
     rout: router
 };
-

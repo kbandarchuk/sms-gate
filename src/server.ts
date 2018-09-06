@@ -1,6 +1,6 @@
-var express = require('express');
-var router = require('./lib/controllers/message-controller');
-var PropertiesReader = require('properties-reader');
+import express from 'express';
+import router from './lib/controllers/message-controller';
+import PropertiesReader from 'properties-reader';
 
 const properties = PropertiesReader('./resources/application.properties');
 const app = express();
@@ -10,4 +10,3 @@ app.use('/', router.rout);
 app.listen(port, function(){
     console.log(`Server running on ${port} port`);
 });
-
