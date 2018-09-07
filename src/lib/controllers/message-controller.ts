@@ -19,7 +19,6 @@ router.use(error_handler);
 
 router.get("/fetch", function (req,res) {
     messageService.fetchAllMessages(function(result) {
-        console.log("Main handler");
         res.send(result);
     })
 });
